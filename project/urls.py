@@ -16,7 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from articles.views import ArticleDetailAPIView, ArticleListCreateAPIView,TagListCreateAPIView, TagAddRemoveAPIView, ListArticleByTag, TagUpdateDeleteView
+from articles.views import (
+    ArticleDetailAPIView,
+    ArticleListCreateAPIView,
+    ListArticleByTag,
+    TagAddRemoveAPIView,
+    TagListCreateAPIView,
+    TagUpdateDeleteView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
