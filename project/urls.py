@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from articles.views import ArticleDetailAPIView, ArticleListCreateAPIView,\
-    TagListCreateAPIView, TagAddRemoveAPIView, ListArticleByTag
+from articles.views import ArticleDetailAPIView, ArticleListCreateAPIView,TagListCreateAPIView, TagAddRemoveAPIView, ListArticleByTag, TagUpdateDeleteView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -31,5 +30,8 @@ urlpatterns = [
     ),
     path(
         "api/tags/<int:tag_id>/", ListArticleByTag.as_view(), name="list_tag_article"
+    ),
+    path(
+        "api/tags/update-delete/", TagUpdateDeleteView.as_view(), name="update_delete_tags"
     ),
 ]
